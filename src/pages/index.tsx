@@ -16,7 +16,7 @@ export default function Home() {
           <h1>News about <br />
             the <span>React</span> world</h1>
           <p>
-            Get acess to all the publication <br />
+            Get access to all the publications <br />
             <span>for $9.90 month</span>
           </p>
 
