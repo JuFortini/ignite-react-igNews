@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "stripe": "./stripe.exe"
   },
   "dependencies": {
     "@stripe/stripe-js": "^1.23.0",
