@@ -3,8 +3,8 @@
     margin: 0 auto;
     padding: 0 2rem;
 }
- .post {
-     max-width: 720px;
+.post {
+    max-width: 720px;
     margin: 5rem auto 0;
 
     h1 {
@@ -32,15 +32,34 @@
 
     h2 {
         margin: 3.5rem 0;
+    }
+
+    &.previewContent {
+        background-image: linear-gradient(var(--gray-100), var(--gray-300), transparent);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
+
+.continueReading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8.5rem;
+
+    background-color: var(--gray-800);
+    height: 5rem;
+    border-radius: 5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+
+    a {
+        padding: 1rem;
         color: var(--yellow-500);
 
-        strong {
-            color: var(--yellow-500);
+        &:hover {
+            text-decoration: underline;
         }
     }
-
-    strong {
-        color: var(--blue-500);
-    }
-
 }
