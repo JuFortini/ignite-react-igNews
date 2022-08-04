@@ -5,4 +5,7 @@ module.exports = {
     "^.+\\.(js|ts|jsx|tsx)$": "<rootDir>/node_modules/babel-jest"  // extensions that will be translated by babel-jest
   },
   testEnvironment: 'jsdom',  // enviroment that the test will be executed so it can knows how to behave
+  moduleNameMapper: {
+    "\\.(scss|css|sass)$": "identity-obj-proxy",  // how tests will deal with these extensions
+  }
 };
