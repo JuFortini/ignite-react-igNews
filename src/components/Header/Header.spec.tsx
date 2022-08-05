@@ -14,7 +14,7 @@ jest.mock('next/router', () => {
 jest.mock('next-auth/react', () => {
   return {
     useSession() {
-      return false
+      return {data: null, status: 'unauthenticated'}
     }
   }
 })

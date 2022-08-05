@@ -5,22 +5,22 @@ import { SignInButton } from './SignInButton';
 
 jest.mock('next-auth/react')
 
-it('renders button correctly when user is not authenticated', () => {
-  const useSessionMocked = jest.mocked(useSession);
-
-  useSessionMocked.mockReturnValueOnce({
-      data: null, 
-      status: 'unauthenticated'
-    })
-
-  render(
-    <SignInButton />
-  )
-
-  expect(screen.getByText('Sign in with Github')).toBeInTheDocument();
-})
-
 describe('SignInButton component', () => {
+  it('renders button correctly when user is not authenticated', () => {
+    const useSessionMocked = jest.mocked(useSession);
+
+    useSessionMocked.mockReturnValueOnce({
+        data: null, 
+        status: 'unauthenticated'
+      })
+
+    render(
+      <SignInButton />
+    )
+
+    expect(screen.getByText('Sign in with Github')).toBeInTheDocument();
+  })
+
   it ('renders button correctly when user is authenticated', () => {
     const useSessionMocked = jest.mocked(useSession);
     const session = {
@@ -28,7 +28,7 @@ describe('SignInButton component', () => {
         name: 'John Doe',
         email: 'johndoe@example.com'
       },
-      expires: 'fake expires',
+      expires: 'fake-expires',
     }
   
     useSessionMocked.mockReturnValueOnce({
@@ -39,8 +39,6 @@ describe('SignInButton component', () => {
     render(
       <SignInButton />
     )
-  
-    debug()
   
     expect(screen.getByText('John Doe')).toBeInTheDocument();
   })
