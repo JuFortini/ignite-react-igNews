@@ -2,18 +2,18 @@ import { render, screen } from '@testing-library/react';
 import Posts, { getStaticProps } from '../../pages/posts';
 import { getPrismicClient } from '../../services/prismic';
 
-const posts = {
+const posts = [{
   slug: 'my-fake-post',
   title: 'My Fake Post',
   excerpt: 'my-fake-post-excerpt',
   updatedAt: '07 de agosto de 2022',
-}
+}]
 
 jest.mock('../../services/prismic');
 
 describe('Posts page', () => {
   it('renders correctly', () => {
-    render(<Posts posts={[posts]} />)
+    render(<Posts posts={posts} />)
 
     expect(screen.getByText('My Fake Post')).toBeInTheDocument();
   })
@@ -42,12 +42,10 @@ describe('Posts page', () => {
 
     const response = await getStaticProps({});
 
-    console.log(response);
-
     expect(response).toEqual(
       expect.objectContaining({
         props: {
-          posts: [posts]
+          posts: posts,
         }
       })
     )
